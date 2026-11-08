@@ -1,0 +1,143 @@
+
+:root {
+  /* ========================================
+     BRAND COLORS
+  ======================================== */
+  --color-primary: #635FC7;
+  --color-primary-dark: #4B2A9B;
+  --color-primary-light: #8B5CF6;
+  --color-accent: #A855F7;
+  --color-accent-light: #C084FC;
+
+  /* ========================================
+     BACKGROUND COLORS
+  ======================================== */
+  --bg-primary: #0B0B14;
+  --bg-secondary: #11111D;
+  --bg-tertiary: #151522;
+  --bg-card: #191927;
+  --bg-card-hover: #20202E;
+  --bg-sidebar: #0D0D18;
+  --bg-navbar: #10101B;
+
+  /* ========================================
+     TEXT COLORS
+  ======================================== */
+  --text-primary: #FFFFFF;
+  --text-secondary: #A2A3B5;
+  --text-muted: #828496;
+  --text-disabled: #555568;
+
+  /* ========================================
+     BORDER COLORS
+  ======================================== */
+  --border-primary: #292938;
+  --border-secondary: #38384A;
+  --border-accent: rgba(168, 85, 247, 0.4);
+
+  /* ========================================
+     GRADIENTS
+  ======================================== */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #7C3AED,
+    #A855F7
+  );
+
+  --gradient-card: linear-gradient(
+    180deg,
+    transparent 30%,
+    rgba(11, 11, 20, 0.95) 100%
+  );
+
+  --gradient-hero: linear-gradient(
+    90deg,
+    rgba(11, 11, 20, 0.95) 0%,
+    rgba(11, 11, 20, 0.55) 50%,
+    transparent 100%
+  );
+
+  /* ========================================
+     STATUS COLORS
+  ======================================== */
+  --color-success: #22C55E;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+  --color-info: #3B82F6;
+
+  /* ========================================
+     TYPOGRAPHY
+  ======================================== */
+  --font-primary: 'Inter', sans-serif;
+
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* ========================================
+     SPACING
+  ======================================== */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* ========================================
+     BORDER RADIUS
+  ======================================== */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ========================================
+     SHADOWS & GLOW
+  ======================================== */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+  --glow-purple: 0 0 15px rgba(168, 85, 247, 0.35);
+
+  --glow-purple-strong: 0 0 25px rgba(168, 85, 247, 0.55);
+
+  /* ========================================
+     TRANSITIONS
+  ======================================== */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ========================================
+     LAYOUT
+  ======================================== */
+  --sidebar-width: 275px;
+  --navbar-height: 80px;
+  --content-max-width: 1600px;
+
+  /* ========================================
+     Z-INDEX
+  ======================================== */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
