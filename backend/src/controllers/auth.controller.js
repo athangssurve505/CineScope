@@ -152,7 +152,7 @@ export async function rotateToken(req, res) {
 
         // Continue refresh-token validation...
 
-        const decoded = verifyToken(refreshToken);
+        const decoded = verifyToken(refreshToken , process.env.REFRESH_SECRET);
         
        const session = await Session.findOne({
          _id: decoded.sid,
@@ -203,5 +203,29 @@ export async function rotateToken(req, res) {
     } catch (e) {
         return sendResponse(res, 500, "Internal Server Error: "+ e.message, 
             false);
+    }
+}
+
+
+export async function getCurrentUser(req, res) {
+    try {
+        return sendResponse(
+            res,
+            200,
+            "User fetched successfully",
+            true,
+            {
+                id: req.user._id,
+                name: req.user.name,
+                email: req.user.email
+            }
+        );
+    } catch (error) {
+        return sendResponse(
+            res,
+            500,
+            "Internal Server Error",
+            false
+        );
     }
 }
