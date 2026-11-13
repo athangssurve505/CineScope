@@ -229,3 +229,82 @@ export async function getCurrentUser(req, res) {
         );
     }
 }
+
+
+export async function logout(req,res){
+    try{
+        const refreshToken = req.cookies.refreshToken;
+
+       if (!refreshToken) {
+        res.clearCookie("refreshToken", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/"
+    });
+
+    return sendResponse(
+        res,
+        200,
+        "Logout successful",
+        true
+    );
+}
+
+
+    const decoded = verifyToken(refreshToken , process.env.REFRESH_SECRET);
+
+    const session = await Session.findOne({
+    _id: decoded.sid,
+    user: decoded.id,
+    revoked: false,
+    expiresAt: { $gt: new Date() }
+    });
+
+    if(!session){
+        res.clearCookie("refreshToken", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/"
+    });
+
+    return sendResponse(
+        res,
+        200,
+        "Logout successful",
+        true
+    );
+    }
+
+    session.revoked = true;
+    await session.save();
+
+    res.clearCookie("refreshToken", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/"
+    });
+
+    return sendResponse(
+        res,
+        200,
+        "Logout successful",
+        true
+    );
+
+
+}
+
+    
+    catch(e){
+        return sendResponse(
+            res,
+            500,
+            "Logout Error: "+ e.message,
+            false
+        );
+    }
+
+}

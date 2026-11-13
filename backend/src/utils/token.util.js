@@ -17,5 +17,14 @@ export function generateRefreshToken(userId,sessionId){
 export function verifyToken(token ,secret){
    return jwt.verify(token,secret);
 
-    
+}
+
+
+export function clearRefreshCookie(res) {
+    res.clearCookie("refreshToken", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/"
+    });
 }

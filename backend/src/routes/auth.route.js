@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { register , login , rotateToken , getCurrentUser } from "../controllers/auth.controller.js";
+import { register , login , rotateToken , getCurrentUser, logout } from "../controllers/auth.controller.js";
 
 const authRouter = Router();
 
@@ -11,6 +11,6 @@ authRouter.post("/register",validate(registerSchema),register);
 authRouter.post("/login",validate(loginSchema),login);
 authRouter.get("/refresh",rotateToken)
 authRouter.get("/me",verifyAccessToken,getCurrentUser)
-
+authRouter.post("/logout", logout);
 
 export default authRouter
