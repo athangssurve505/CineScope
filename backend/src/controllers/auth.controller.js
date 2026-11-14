@@ -7,6 +7,10 @@ import sendResponse from "../utils/response.util.js";
 import { generateAccessToken,generateRefreshToken , verifyToken } from "../utils/token.util.js";
 import deviceInfo from "../utils/deviceInfo.util.js";
 
+
+
+
+
 export async function register(req, res) {
     try {
         const { name, email, password } = req.body;
